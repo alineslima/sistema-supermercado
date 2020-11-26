@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Venda {
@@ -16,7 +18,8 @@ public class Venda {
 	@Column(name = "id_venda")
 	private Long idVenda;
 	
-	@Column(name = "Cliente_cpf")
+	@ManyToOne
+	@JoinColumn(name = "Cliente_cpf")
 	private Cliente cliente;
 	
 	@Column(name = "data_venda")

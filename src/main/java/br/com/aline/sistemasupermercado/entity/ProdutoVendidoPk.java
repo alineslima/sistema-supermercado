@@ -1,12 +1,16 @@
 package br.com.aline.sistemasupermercado.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Embeddable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Embeddable
-public class ProdutoVendidoPk {
+public class ProdutoVendidoPk implements Serializable{
 	
+	private static final long serialVersionUID = 3728992176136179153L;
+
 	@ManyToOne
 	@JoinColumn(name = "Venda_id_venda")
 	private Venda venda;

@@ -20,8 +20,8 @@ public class Produto {
 	@Column(name = "nome_produto")
 	private String nomeProduto;
 	
-	@Column(name = "descrição_produto")
-	private String descriçãoProduto;
+	@Column(name = "descricao_produto")
+	private String descricaoProduto;
 	
 	@Column(name = "valor")
 	private Double valorProduto;
@@ -48,11 +48,11 @@ public class Produto {
 	public void setNomeProduto(String nomeProduto) {
 		this.nomeProduto = nomeProduto;
 	}
-	public String getDescriçãoProduto() {
-		return descriçãoProduto;
+	public String getDescricaoProduto() {
+		return descricaoProduto;
 	}
-	public void setDescriçãoProduto(String descriçãoProduto) {
-		this.descriçãoProduto = descriçãoProduto;
+	public void setDescricaoProduto(String descriçãoProduto) {
+		this.descricaoProduto = descriçãoProduto;
 	}
 	public Double getValorProduto() {
 		return valorProduto;

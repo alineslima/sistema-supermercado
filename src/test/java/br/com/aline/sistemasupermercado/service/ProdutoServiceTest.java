@@ -7,6 +7,7 @@ import java.util.Optional;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
@@ -298,6 +299,18 @@ public class ProdutoServiceTest {
 		Assert.assertEquals(id, produto.getIdProduto());
 	}
 	
-	
-	
+	@Test
+	public void testDeletarProduto() {
+		Long id = 50L;
+		Produto produto = new Produto();
+		
+		Optional<Produto> optional = Optional.of(produto);
+		Mockito.when(produtoRepository.findById(id)).thenReturn(optional);
+		
+		
+		produtoService.deletarProduto(id);
+		ArgumentCaptor<Long> idCapturado = ArgumentCaptor.forClass(Long.class);
+		Mockito.verify(produtoRepository, Mockito.times(1)).deleteById(idCapturado.capture() );
+		Assert.assertEquals(id, idCapturado.getValue());
+	}
 }

@@ -7,6 +7,7 @@ import java.util.Optional;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
@@ -88,6 +89,18 @@ public class ProdutoControllerTest {
 		
 	}
 	
-	
+	@Test
+	public void testDeletarProduto() {
+		Long id = 60L;
+
+		produtoController.deletarProduto(id);
+
+		ArgumentCaptor<Long> idCapturado = ArgumentCaptor.forClass(Long.class);
+		Mockito.verify(produtoService, Mockito.times(1)).deletarProduto(idCapturado.capture());
+		Assert.assertEquals(id, idCapturado.getValue());
+		
+		
+	}
+		
 	
 }

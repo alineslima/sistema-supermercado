@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS `mercado`.`Produto` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `codigo_barra` VARCHAR(100) NOT NULL,
   `nome_produto` VARCHAR(100) NOT NULL,
-  `descrição_produto` VARCHAR(200) NOT NULL,
+  `descricao_produto` VARCHAR(200) NOT NULL,
   `valor` DECIMAL(10,2) NOT NULL,
   `quantidade` DECIMAL(6,3) NOT NULL,
   PRIMARY KEY (`id`))

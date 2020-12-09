@@ -95,5 +95,12 @@ public class ProdutoService {
 		}
 		
 	}
+
+
+	public void deletarProduto(Long id) {
+		consultarProdutoPorId(id);
+		produtoRepository.deleteById(id);
+		
+	}
 	
 }
